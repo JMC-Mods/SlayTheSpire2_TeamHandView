@@ -26,14 +26,14 @@ public static class TeamHandViewSettings
         Order = 20)]
     public static float CardScale = 0.42f;
 
-    [UIIntSlider(3, 8)]
+    [UIIntSlider(3, 10)]
     [Config(
         "Max cards per row",
         group: PreviewGroup,
         Description = "Controls how many cards are shown before the preview wraps to a new row.",
         Key = "max_columns",
         Order = 30)]
-    public static int MaxColumns = 5;
+    public static int MaxColumns = 10;
 
     [UIHotkey(
         "Toggle preview lock",
