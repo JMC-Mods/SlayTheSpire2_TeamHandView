@@ -6,6 +6,10 @@
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.card_scale.DESCRIPTION": "Controls how large cards appear in the hover preview.",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.max_columns.NAME": "Max cards per row",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.max_columns.DESCRIPTION": "Controls how many cards are shown before the preview wraps to a new row.",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_x.NAME": "Horizontal offset",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_x.DESCRIPTION": "Moves the hand preview horizontally from its default position. Positive values move it right.",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_y.NAME": "Vertical offset",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_y.DESCRIPTION": "Moves the hand preview vertically from its default position. Positive values move it down.",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.toggle_preview_lock.NAME": "Lock/unlock hand preview",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.toggle_preview_lock.DESCRIPTION": "Lock the currently hovered remote hand preview, or unlock it. Defaults to Ctrl+H on keyboard and left stick press on controller."
 }

@@ -6,6 +6,10 @@
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.card_scale.DESCRIPTION": "Contrôle la taille des cartes dans l'aperçu.",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.max_columns.NAME": "Cartes max. par ligne",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.max_columns.DESCRIPTION": "Contrôle combien de cartes sont affichées avant que l'aperçu passe à la ligne.",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_x.NAME": "Décalage horizontal",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_x.DESCRIPTION": "Déplace l'aperçu de main horizontalement depuis sa position par défaut. Les valeurs positives le déplacent vers la droite.",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_y.NAME": "Décalage vertical",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_y.DESCRIPTION": "Déplace l'aperçu de main verticalement depuis sa position par défaut. Les valeurs positives le déplacent vers le bas.",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.toggle_preview_lock.NAME": "Verrouiller/déverrouiller l'aperçu",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.toggle_preview_lock.DESCRIPTION": "Verrouille l'aperçu de main actuellement affiché, ou le déverrouille. Par défaut : Ctrl+H au clavier et clic sur le stick gauche à la manette."
 }

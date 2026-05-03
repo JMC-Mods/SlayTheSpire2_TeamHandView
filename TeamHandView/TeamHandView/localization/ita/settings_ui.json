@@ -6,6 +6,10 @@
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.card_scale.DESCRIPTION": "Controlla quanto grandi appaiono le carte nell'anteprima.",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.max_columns.NAME": "Carte max per riga",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.max_columns.DESCRIPTION": "Controlla quante carte vengono mostrate prima che l'anteprima vada a capo.",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_x.NAME": "Spostamento orizzontale",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_x.DESCRIPTION": "Sposta l'anteprima della mano orizzontalmente rispetto alla posizione predefinita. I valori positivi la spostano a destra.",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_y.NAME": "Spostamento verticale",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_y.DESCRIPTION": "Sposta l'anteprima della mano verticalmente rispetto alla posizione predefinita. I valori positivi la spostano in basso.",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.toggle_preview_lock.NAME": "Blocca/sblocca anteprima mano",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.toggle_preview_lock.DESCRIPTION": "Blocca l'anteprima mano attualmente mostrata o la sblocca. Predefinito: Ctrl+H su tastiera e pressione dello stick sinistro sul controller."
 }

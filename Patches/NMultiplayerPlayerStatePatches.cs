@@ -37,21 +37,6 @@ internal static class NMultiplayerPlayerStatePatches
         }
     }
 
-    [HarmonyPatch("OnFocus")]
-    [HarmonyPostfix]
-    private static void ShowHandPreviewOnFocus(NMultiplayerPlayerState __instance)
-    {
-        // NButton 的 Focused 同时覆盖鼠标悬停和手柄焦点，直接挂这里能补齐手柄导航路径。
-        RemoteHandPreviewController.UpdateVisibility(__instance, true);
-    }
-
-    [HarmonyPatch("OnUnfocus")]
-    [HarmonyPostfix]
-    private static void HideHandPreviewOnUnfocus(NMultiplayerPlayerState __instance)
-    {
-        RemoteHandPreviewController.UpdateVisibility(__instance, false);
-    }
-
     [HarmonyPatch("RefreshCombatValues")]
     [HarmonyPostfix]
     private static void RefreshHandPreview(NMultiplayerPlayerState __instance)

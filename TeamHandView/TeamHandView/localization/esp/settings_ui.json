@@ -6,6 +6,10 @@
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.card_scale.DESCRIPTION": "Controla el tamaño con el que aparecen las cartas en la vista previa.",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.max_columns.NAME": "Máx. cartas por fila",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.max_columns.DESCRIPTION": "Controla cuántas cartas se muestran antes de que la vista previa pase a una nueva fila.",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_x.NAME": "Desplazamiento horizontal",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_x.DESCRIPTION": "Mueve la vista previa de la mano horizontalmente desde su posición predeterminada. Los valores positivos la mueven a la derecha.",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_y.NAME": "Desplazamiento vertical",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_y.DESCRIPTION": "Mueve la vista previa de la mano verticalmente desde su posición predeterminada. Los valores positivos la mueven hacia abajo.",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.toggle_preview_lock.NAME": "Bloquear/desbloquear vista previa",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.toggle_preview_lock.DESCRIPTION": "Bloquea la vista previa de mano que se está mostrando o la desbloquea. Por defecto: Ctrl+H en teclado y pulsar el stick izquierdo en mando."
 }

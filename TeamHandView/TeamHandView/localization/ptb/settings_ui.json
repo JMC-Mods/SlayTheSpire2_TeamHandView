@@ -6,6 +6,10 @@
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.card_scale.DESCRIPTION": "Controla o tamanho das cartas na prévia.",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.max_columns.NAME": "Máx. de cartas por linha",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.max_columns.DESCRIPTION": "Controla quantas cartas são mostradas antes de a prévia quebrar para uma nova linha.",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_x.NAME": "Deslocamento horizontal",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_x.DESCRIPTION": "Move a pré-visualização da mão horizontalmente a partir da posição padrão. Valores positivos movem para a direita.",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_y.NAME": "Deslocamento vertical",
+    "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.offset_y.DESCRIPTION": "Move a pré-visualização da mão verticalmente a partir da posição padrão. Valores positivos movem para baixo.",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.toggle_preview_lock.NAME": "Bloquear/desbloquear prévia da mão",
     "EXTENSION.JMCMODLIB.CONFIG.TeamHandView.toggle_preview_lock.DESCRIPTION": "Bloqueia a prévia de mão exibida no momento ou a desbloqueia. Padrão: Ctrl+H no teclado e pressionar o analógico esquerdo no controle."
 }

@@ -8,6 +8,8 @@ public static class TeamHandViewSettings
 {
     private const string PreviewGroup = "preview";
     private const string DefaultLockControllerInput = "controller_joystick_press";
+    public const float MinPositionOffset = -400f;
+    public const float MaxPositionOffset = 400f;
 
     [UIToggle]
     [Config(
@@ -36,6 +38,24 @@ public static class TeamHandViewSettings
         Order = 30)]
     public static int MaxColumns = 10;
 
+    [UIFloatSlider(MinPositionOffset, MaxPositionOffset, decimalPlaces: 0)]
+    [Config(
+        "Horizontal offset",
+        group: PreviewGroup,
+        Description = "Moves the preview horizontally from its default position.",
+        Key = "offset_x",
+        Order = 40)]
+    public static float PositionOffsetX = 0f;
+
+    [UIFloatSlider(MinPositionOffset, MaxPositionOffset, decimalPlaces: 0)]
+    [Config(
+        "Vertical offset",
+        group: PreviewGroup,
+        Description = "Moves the preview vertically from its default position.",
+        Key = "offset_y",
+        Order = 50)]
+    public static float PositionOffsetY = 0f;
+
     [UIHotkey(
         "Toggle preview lock",
         PreviewGroup,
@@ -47,7 +67,7 @@ public static class TeamHandViewSettings
         DefaultController = DefaultLockControllerInput,
         AllowController = true,
         ConsumeInput = true,
-        Order = 40)]
+        Order = 60)]
     public static void TogglePreviewLock()
     {
         RemoteHandPreviewController.TogglePreviewLock();
