@@ -37,6 +37,13 @@ internal static class NMultiplayerPlayerStatePatches
         }
     }
 
+    [HarmonyPatch(nameof(NMultiplayerPlayerState._Ready))]
+    [HarmonyPostfix]
+    private static void RestoreLockedHandPreviewAfterReady(NMultiplayerPlayerState __instance)
+    {
+        RemoteHandPreviewController.RefreshIfVisible(__instance);
+    }
+
     [HarmonyPatch("RefreshCombatValues")]
     [HarmonyPostfix]
     private static void RefreshHandPreview(NMultiplayerPlayerState __instance)

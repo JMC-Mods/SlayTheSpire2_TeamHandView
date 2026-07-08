@@ -1,4 +1,5 @@
 using Godot;
+using JmcModLib.Persistence;
 using JmcModLib.Utils;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -25,6 +26,10 @@ internal static class RemoteHandPreviewController
 
     private static readonly Dictionary<ulong, PreviewState> Previews = [];
     private static readonly Dictionary<ulong, NMultiplayerPlayerState> PendingRefreshes = [];
+
+    [JmcClientRunData("remote_hand_preview.lock")]
+    private static readonly JmcRunDataSlot<PreviewLockState> PreviewLock = new(new PreviewLockState());
+
     private static ulong? HoveredNetId;
     private static ulong? LockedNetId;
 
@@ -58,6 +63,8 @@ internal static class RemoteHandPreviewController
                 return;
 
             ulong netId = playerState.Player.NetId;
+            RestorePersistedLockIfNeeded(netId);
+
             if (!Previews.ContainsKey(netId) && LockedNetId != netId)
                 return;
 
@@ -85,6 +92,7 @@ internal static class RemoteHandPreviewController
                 if (LockedNetId == hoveredNetId)
                 {
                     LockedNetId = null;
+                    PersistLockedNetId(null);
                     ModLogger.Info($"{VersionInfo.Tag} 已解除锁定其他玩家手牌预览。");
                     return;
                 }
@@ -93,6 +101,7 @@ internal static class RemoteHandPreviewController
                     HidePreview(previouslyLockedNetId);
 
                 LockedNetId = hoveredNetId;
+                PersistLockedNetId(hoveredNetId);
                 FreezeCurrentPreviewAnchor(hoveredNetId);
                 ModLogger.Info($"{VersionInfo.Tag} 已锁定其他玩家手牌预览。");
                 return;
@@ -436,6 +445,30 @@ internal static class RemoteHandPreviewController
             ShowOrRefresh(playerState);
     }
 
+    private static void RestorePersistedLockIfNeeded(ulong netId)
+    {
+        if (LockedNetId is not null)
+            return;
+
+        ulong? persistedNetId = PreviewLock.Value?.LockedNetId;
+        if (persistedNetId != netId)
+            return;
+
+        LockedNetId = persistedNetId;
+        ModLogger.Debug($"{VersionInfo.Tag} 已恢复锁定其他玩家手牌预览。");
+    }
+
+    private static void PersistLockedNetId(ulong? netId)
+    {
+        JmcDataWriteResult result = PreviewLock.SetValue(new PreviewLockState
+        {
+            LockedNetId = netId,
+        });
+
+        if (!result.Success)
+            ModLogger.Debug($"{VersionInfo.Tag} 保存远程手牌预览锁定状态失败：{result.Message}");
+    }
+
     private static Vector2 GetPreviewSize(int cardCount, int columns, Vector2 cardSize)
     {
         int rows = (cardCount + columns - 1) / columns;
@@ -582,14 +615,25 @@ internal static class RemoteHandPreviewController
 
     private static void UnlockCurrentPreview(bool hideLockedPreview)
     {
-        if (LockedNetId is not { } lockedNetId)
+        ulong? lockedNetId = LockedNetId ?? PreviewLock.Value?.LockedNetId;
+        if (lockedNetId is null)
             return;
 
         LockedNetId = null;
+        PersistLockedNetId(null);
         if (hideLockedPreview)
-            HidePreview(lockedNetId);
+            HidePreview(lockedNetId.Value);
 
         ModLogger.Info($"{VersionInfo.Tag} 已解除锁定其他玩家手牌预览。");
+    }
+
+    private sealed class PreviewLockState
+    {
+        public PreviewLockState()
+        {
+        }
+
+        public ulong? LockedNetId { get; set; }
     }
 
     private sealed class PreviewState(Control root)
